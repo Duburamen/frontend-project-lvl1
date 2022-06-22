@@ -5,7 +5,8 @@
   "description": "[![Actions Status](https://github.com/Duburamen/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Duburamen/frontend-project-lvl1/actions)",
   "main": "index.js",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +23,10 @@
   "homepage": "https://github.com/Duburamen/frontend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
   }
 }

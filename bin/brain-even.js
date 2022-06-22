@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { userName } from '../src/cli.js';
+import even from '../src/even.js';
 
 console.log('Welcome to the Brain Games!');
-userName();
+even();

@@ -10,14 +10,11 @@ const gcd = () => {
       if (!b) {
         return a;
       }
-
       return gcdFunction(b, a % b);
     };
     const correctAnswer = gcdFunction(randomNumberFirst, randomNumberSecond);
-
     console.log(`Question: ${randomNumberFirst} ${randomNumberSecond}`);
     const answer = readlineSync.question('Your answer: ');
-
     if (answer === correctAnswer.toString()) {
       console.log('Correct!');
     } else {

@@ -21,7 +21,6 @@ const calc = () => {
 
     console.log(`Question: ${randomNumberFirst} ${operators[randomOperator].sign} ${randomNumberSecond}`);
     const answer = readlineSync.question('Your answer: ');
-
     if (answer === correctAnswer.toString()) {
       console.log('Correct!');
     } else {

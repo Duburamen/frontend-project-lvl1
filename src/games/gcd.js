@@ -1,25 +1,21 @@
 import readlineSync from 'readline-sync';
 import { greetings, congrats } from '../index.js';
 
-const calc = () => {
+const gcd = () => {
   const name = greetings();
   for (let counter = 1; counter <= 3; counter += 1) {
-    const operators = [{
-      sign: '+',
-      method: (a, b) => a + b,
-    }, {
-      sign: '-',
-      method: (a, b) => a - b,
-    }, {
-      sign: '*',
-      method: (a, b) => a * b,
-    }];
-    const randomOperator = Math.floor(Math.random() * operators.length);
     const randomNumberFirst = Math.floor(Math.random() * 50);
     const randomNumberSecond = Math.floor(Math.random() * 50);
-    const correctAnswer = operators[randomOperator].method(randomNumberFirst, randomNumberSecond);
+    const gcdFunction = (a, b) => {
+      if (!b) {
+        return a;
+      }
 
-    console.log(`Question: ${randomNumberFirst} ${operators[randomOperator].sign} ${randomNumberSecond}`);
+      return gcdFunction(b, a % b);
+    };
+    const correctAnswer = gcdFunction(randomNumberFirst, randomNumberSecond);
+
+    console.log(`Question: ${randomNumberFirst} ${randomNumberSecond}`);
     const answer = readlineSync.question('Your answer: ');
 
     if (answer === correctAnswer.toString()) {
@@ -31,4 +27,4 @@ const calc = () => {
   }
   congrats(name);
 };
-export default calc;
+export default gcd;

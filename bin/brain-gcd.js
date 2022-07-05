@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // import readlineSync from 'readline-sync';
-import { userName } from '../src/games/cli.js';
+import gcd from '../src/games/gcd.js';
 
 console.log('Welcome to the Brain Games!');
-userName();
+gcd();

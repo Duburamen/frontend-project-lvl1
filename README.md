@@ -7,3 +7,9 @@ https://asciinema.org/a/vif9CNOwsm2gzvScXjFcDQ5pw
 
 Brain-calc:
 https://asciinema.org/a/oToqutKY2ZDDRMorkjtz0EVq4
+
+Brain-gcd:
+https://asciinema.org/a/NavfViGqP4WgCCP0QdBMYqfVO
+
+Brain-progression:
+https://asciinema.org/a/AJuhikTCNx3OxI4u9RLxpryxn

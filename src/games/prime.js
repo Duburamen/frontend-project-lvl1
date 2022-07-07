@@ -1,35 +1,27 @@
-import readlineSync from 'readline-sync';
-import { greetings, congrats } from '../index.js';
+import { greetings, summaryYesNo, congrats } from '../index.js';
 
-const primeFunction = (a) => {
-  let isPrime = true;
+const isPrime = (a) => {
   if (a === 1) {
     return false;
   }
   if (a > 1) {
-    for (let i = 2; i < a / 2; i += 1) {
+    for (let i = 2; i <= a / 2; i += 1) {
       if (a % i === 0) {
-        isPrime = false;
-        break;
+        return false;
       }
     }
   }
-  return isPrime;
+  return true;
 };
 
 const prime = () => {
   const name = greetings();
   for (let counter = 1; counter <= 3; counter += 1) {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
+    const correctAnswer = (isPrime(randomNumber) === true) ? 'yes' : 'no';
+    const question = `Question: ${randomNumber}`;
 
-    console.log(`Question: ${randomNumber}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (((answer === 'yes') && (primeFunction(randomNumber) === true)) || ((answer === 'no') && (primeFunction(randomNumber) === false))) {
-      console.log('Correct!');
-    } else {
-      const correctAnswer = (primeFunction(randomNumber) === true) ? 'yes' : 'no';
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
-      console.log(`Let's try again, ${name}!`);
+    if (summaryYesNo(question, correctAnswer, name) === false) {
       return;
     }
   }

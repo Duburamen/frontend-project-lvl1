@@ -13,6 +13,7 @@ const even = () => {
     } else {
       const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }

@@ -29,6 +29,7 @@ const prime = () => {
     } else {
       const correctAnswer = (primeFunction(randomNumber) === true) ? 'yes' : 'no';
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }

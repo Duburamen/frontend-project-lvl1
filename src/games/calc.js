@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import { greetings, congrats } from '../index.js';
+import { greetings, summary, congrats } from '../index.js';
 
 const calc = () => {
   const name = greetings();
@@ -18,14 +17,9 @@ const calc = () => {
     const randomNumberFirst = Math.floor(Math.random() * 50);
     const randomNumberSecond = Math.floor(Math.random() * 50);
     const correctAnswer = operators[randomOperator].method(randomNumberFirst, randomNumberSecond);
+    const question = `Question: ${randomNumberFirst} ${operators[randomOperator].sign} ${randomNumberSecond}`;
 
-    console.log(`Question: ${randomNumberFirst} ${operators[randomOperator].sign} ${randomNumberSecond}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer === correctAnswer.toString()) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
-      console.log(`Let's try again, ${name}!`);
+    if (summary(question, correctAnswer, name) === false) {
       return;
     }
   }

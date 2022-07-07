@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import { greetings, congrats } from '../index.js';
+import { greetings, summary, congrats } from '../index.js';
 
 const progressionGenerator = (a, b) => {
   const array = [];
@@ -20,13 +19,9 @@ const progression = () => {
     const arrayOutput = progressionGenerator(randomNumber, step);
     const correctAnswer = arrayOutput[randomArrayIndex];
     arrayOutput[randomArrayIndex] = '..';
-    console.log(`Question: ${arrayOutput.join(' ')}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer === correctAnswer.toString()) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
-      console.log(`Let's try again, ${name}!`);
+    const question = `Question: ${arrayOutput.join(' ')}`;
+
+    if (summary(question, correctAnswer, name) === false) {
       return;
     }
     congrats(name);
